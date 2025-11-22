@@ -1,1 +1,170 @@
-# Task_To_Do_List
+# Full-Stack Todo List Application
+
+Frontend: Angular\
+Backend: Spring Boot (Java)
+
+## 📌 Overview
+
+This project is a full-stack Todo List application consisting of:
+
+-   **Frontend (Angular)** --- UI สำหรับจัดการงาน (Tasks)
+-   **Backend (Spring Boot)** --- REST API สำหรับจัดการข้อมูลในฐานข้อมูล
+
+ทั้งสองส่วนสามารถทำงานร่วมกันผ่าน HTTP API เช่น `/api/todo`,
+`/api/auth/login` เป็นต้น
+
+------------------------------------------------------------------------
+
+# 🚀 Features
+
+### ✅ Frontend (Angular)
+
+-   Authentication UI (Login)
+-   Todo List UI
+-   ใช้ Angular Routing
+-   จัดการ API ผ่าน `api.service.ts`
+-   โครงสร้าง Components / Layout ชัดเจน
+
+### ✅ Backend (Spring Boot)
+
+-   REST API สำหรับ CRUD Todo
+-   Authentication (ถ้ามีในโปรเจกต์จริง)
+-   Entity / Repository / Service / Controller พร้อมใช้งาน
+-   Maven based project
+-   รองรับ Database ผ่าน Spring Data JPA
+
+------------------------------------------------------------------------
+
+# 📂 Project Structure
+
+## 🖥 Frontend (Angular)
+
+    frontend/
+     ├─ src/
+     │   ├─ app/
+     │   │   ├─ auth/
+     │   │   │   ├─ auth-layout/
+     │   │   │   └─ login-component/
+     │   │   ├─ services/api.service.ts
+     │   │   ├─ app.routes.ts
+     │   │   ├─ app.ts
+     │   └─ index.html
+     ├─ angular.json
+     ├─ package.json
+
+## 🛠 Backend (Spring Boot)
+
+    backend/
+     ├─ src/main/java/com/.../
+     │   ├─ controller/
+     │   ├─ service/
+     │   ├─ repository/
+     │   └─ entity/
+     ├─ src/main/resources/
+     │   └─ application.properties
+     ├─ pom.xml
+     ├─ mvnw / mvnw.cmd
+
+------------------------------------------------------------------------
+
+# ▶️ How to Run
+
+## 🖥 1. Run Backend (Spring Boot)
+
+### **Requirements**
+
+-   Java 17+
+-   Maven
+
+### **Commands**
+
+``` bash
+cd backend
+./mvnw spring-boot:run
+```
+
+Backend will start at:
+
+    http://localhost:8080
+
+------------------------------------------------------------------------
+
+## 🌐 2. Run Frontend (Angular)
+
+### **Requirements**
+
+-   Node.js (v18+)
+-   Angular CLI
+
+### **Install dependencies**
+
+``` bash
+cd frontend
+npm install
+```
+
+### **Run App**
+
+``` bash
+ng serve
+```
+
+Frontend will run at:
+
+    http://localhost:4200
+
+------------------------------------------------------------------------
+
+# 🔗 Connecting Frontend & Backend
+
+แก้ไข URL API ที่ใช้ใน `api.service.ts` เช่น:
+
+``` ts
+private apiUrl = 'http://localhost:8080/api';
+```
+
+------------------------------------------------------------------------
+
+# 📡 Example API Routes (Backend)
+
+  Method   Endpoint          Description
+  -------- ----------------- ------------------------
+  GET      /api/todo         ดึงรายการ todo ทั้งหมด
+  POST     /api/todo         เพิ่ม todo ใหม่
+  PUT      /api/todo/:id     อัปเดต todo
+  DELETE   /api/todo/:id     ลบ todo
+  POST     /api/auth/login   เข้าสู่ระบบ (ถ้ามี)
+
+------------------------------------------------------------------------
+
+# 🧪 Testing
+
+คุณสามารถทดสอบ API ผ่าน: - Postman - Thunder Client - cURL
+
+------------------------------------------------------------------------
+
+# 📦 Build
+
+### Build Angular
+
+``` bash
+ng build
+```
+
+### Build Backend
+
+``` bash
+./mvnw clean package
+```
+
+------------------------------------------------------------------------
+
+# 📄 License
+
+MIT License
+
+------------------------------------------------------------------------
+
+# 👨‍💻 Author
+
+Poonnawit
