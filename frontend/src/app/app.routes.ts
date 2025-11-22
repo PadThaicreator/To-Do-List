@@ -7,6 +7,7 @@ import { Navbar } from './navbar/navbar';
 import { HomeComponent } from './pages/home-component/home-component';
 import { TaskComponent } from './pages/task-component/task-component';
 import { NotFoundComponent } from './pages/not-found-component/not-found-component';
+import { UserComponent } from './pages/user-component/user-component';
 
 export const routes: Routes = [
     {
@@ -44,6 +45,10 @@ export const routes: Routes = [
                 path : "",
                 redirectTo : "homepage",
                 pathMatch : "full"
+            },
+            {
+                path : "profile",
+                component : UserComponent
             }
         ]
     },
