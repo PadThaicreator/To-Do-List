@@ -80,7 +80,7 @@ This project is a full-stack Todo List application consisting of:
 
 ``` bash
 cd backend
-./mvnw spring-boot:run
+mvnw spring-boot:run
 ```
 
 Backend will start at:
@@ -113,58 +113,4 @@ Frontend will run at:
 
     http://localhost:4200
 
-------------------------------------------------------------------------
 
-# 🔗 Connecting Frontend & Backend
-
-แก้ไข URL API ที่ใช้ใน `api.service.ts` เช่น:
-
-``` ts
-private apiUrl = 'http://localhost:8080/api';
-```
-
-------------------------------------------------------------------------
-
-# 📡 Example API Routes (Backend)
-
-  Method   Endpoint          Description
-  -------- ----------------- ------------------------
-  GET      /api/todo         ดึงรายการ todo ทั้งหมด
-  POST     /api/todo         เพิ่ม todo ใหม่
-  PUT      /api/todo/:id     อัปเดต todo
-  DELETE   /api/todo/:id     ลบ todo
-  POST     /api/auth/login   เข้าสู่ระบบ (ถ้ามี)
-
-------------------------------------------------------------------------
-
-# 🧪 Testing
-
-คุณสามารถทดสอบ API ผ่าน: - Postman - Thunder Client - cURL
-
-------------------------------------------------------------------------
-
-# 📦 Build
-
-### Build Angular
-
-``` bash
-ng build
-```
-
-### Build Backend
-
-``` bash
-./mvnw clean package
-```
-
-------------------------------------------------------------------------
-
-# 📄 License
-
-MIT License
-
-------------------------------------------------------------------------
-
-# 👨‍💻 Author
-
-Poonnawit
