@@ -1,0 +1,56 @@
+<div class="item-container" [ngStyle]="borderColor(task().status)">
+    
+    <div class="item-detail">
+        <div>
+            <p>{{task().title}}</p>
+            <p>{{task().content}}</p>
+        </div>
+        <div style="display: flex;  align-items: center; gap: 10px;">
+            @if(task().status == "Submitted"){
+                <lucide-icon name="undo-2" class="icon submit" style="background-color: rgb(250, 189, 75);" size="18" (click)="handleSubmit(task())"></lucide-icon>
+            }
+            @else {
+                <lucide-icon name="check" class="icon submit" size="18" (click)="handleSubmit(task())"></lucide-icon>
+            }
+            <lucide-icon name="pencil" size="18" class="icon edit" (click)="openModal()"></lucide-icon>
+            @if(task().status != "Submitted"){
+                <lucide-icon name="trash"  size="18" class="icon delete" (click)="handleDelete(task())"></lucide-icon>
+            }
+        </div>
+    </div>
+    
+    <div class="item-status">
+        <div [ngStyle]="statusColor(task().status)" class="status" >
+            @if(isOverdue(task().deadline) && task().status != "Submitted"){
+                •  Delay
+            }
+            @else {
+                • {{ task().status}}
+            }
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <lucide-icon name="timer"></lucide-icon>
+            {{ task().deadline | date:'dd MMM y HH:mm' }}
+        </div>
+        
+    </div>
+</div>
+
+<modal-template [isModelOpen]="isModalOpen" (isModalClose)="isModalOpen = false">
+    <div style="margin-bottom: 0.5rem;">Add Task</div>
+    <form>
+        <div class="input">
+            <label>Title</label>
+            <input type="text" name="title" [(ngModel)]="title" />
+        </div>
+        <div class="input">
+            <label>Content</label>
+            <input type="text" name="content" [(ngModel)]="content" />
+        </div>
+        <div class="input">
+            <label>Deadline</label>
+            <input type="datetime-local" name="deadline" [(ngModel)]="deadline"/>
+        </div>
+        <input type="submit" value="confirm" (click)="handleEdit()">
+    </form>
+</modal-template>

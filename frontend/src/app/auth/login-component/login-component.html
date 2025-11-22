@@ -1,0 +1,21 @@
+<form style="display: flex; flex-direction: column; gap: 1rem;">
+    <div class="input">
+        <label>Email</label>
+        <input type="email" [(ngModel)] = "email" name="email">
+    </div>
+    <div class="input">
+        <label>Password</label>
+        <div style="display: flex; align-items: center; gap: 10px; ">
+          <input [type]="isShowPassword ? 'text' : 'password'"  [(ngModel)] = "password" name="password">
+            @if(!isShowPassword){
+                <lucide-icon name="eye" size="20" style="display: flex;" (click)="isShowPassword = true"></lucide-icon>
+            }
+            @else {
+                <lucide-icon name="eye-off" size="20" style="display: flex;" (click)="isShowPassword = false"></lucide-icon>
+            }
+        </div>
+    </div>
+    <input type="submit" value="Login" class="login-btn" (click)="handleLogin()"/>
+    
+    <div>if youu don't have account ,please <a href="/register">register here</a></div>
+</form>

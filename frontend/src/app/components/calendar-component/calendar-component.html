@@ -1,0 +1,33 @@
+<div class="calendar-wrapper">
+  <full-calendar [options]="calendarOptions">
+  <ng-template #eventContent let-arg>
+    
+    <div class="custom-event-card"
+        style="display: flex; justify-content: space-between; align-items: center;" 
+         [class.submitted]="arg.event.extendedProps['status'] === 'Submitted'"
+         [class.pending]="arg.event.extendedProps['status'] !== 'Submitted'">
+      
+      <div>
+        <div class="event-time">{{ arg.timeText }}</div>
+
+      <div class="event-title">
+        <b>{{ arg.event.title }}</b>
+      </div>
+
+      <div class="event-desc">
+        {{ arg.event.extendedProps['content'] }}
+      </div>
+      </div>
+
+      <div class="event-status">
+        @if (arg.event.extendedProps['status'] === 'Submitted') {
+            <span>submitted</span>
+        } @else {
+            <span>not submit</span>
+        }
+      </div>
+
+    </div>
+  </ng-template>
+</full-calendar>
+</div>

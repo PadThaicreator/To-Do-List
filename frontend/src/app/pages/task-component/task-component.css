@@ -1,0 +1,18 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    border-radius: 0.5rem;
+    border: 1px solid rgb(204, 203, 203);
+    padding: 0.5rem 1rem
+}
+
+input[type="submit"] {
+    background-color: rgb(78, 241, 78);
+    color: white;
+    border: none;
+   cursor: pointer;
+}

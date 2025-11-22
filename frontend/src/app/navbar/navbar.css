@@ -1,0 +1,34 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #879bf7;
+    color: white ;
+    border-radius: 1rem;
+}
+
+li {
+    list-style-type: none;
+
+}
+
+.select-page {
+    display: flex;
+    gap: 2rem;
+
+}
+
+.bg-template {
+    
+    background-color: #FBFBFB;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    min-height: calc(100vh - 8rem);
+}

@@ -1,0 +1,53 @@
+.item-container {
+    
+    display: flex;
+    flex-direction: column;
+    
+    
+    padding: 1rem 3rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+.item-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem
+    
+}
+
+.item-status {
+    display: flex;
+    border-top: 1px solid rgb(204, 203, 203);
+    padding: 0.5rem 0rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status {
+    padding: 0.5rem 1rem ;
+    border-radius: 1rem;
+}
+
+.icon {
+    border-radius: 100%;
+    
+    display: flex;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.edit {
+    background-color: rgb(253, 241, 82);
+}
+
+.delete {
+    background-color: rgb(253, 82, 82);
+}
+
+.submit {
+    background-color: rgb(78, 241, 78);
+    
+}

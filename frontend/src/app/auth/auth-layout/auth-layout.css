@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 100vh;
+}
+
+.auth-container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border: 1px solid ;
+    gap: 1rem;
+    background-color: white;
+    min-width: 60vw;
+    min-height: 60vh;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.wrapper {
+    width: 100%;       
+    display: flex;     
+    justify-content: center; 
+    align-items: center;
+}
+
+.logo-img {
+    width: 50%;         
+    height: 50%;      
+    object-fit: contain;
+    border-radius: 100%;
+    overflow: hidden;
+   
+}

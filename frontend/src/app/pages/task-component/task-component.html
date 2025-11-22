@@ -1,0 +1,29 @@
+<div style="display: flex; justify-content: space-between; padding: 0rem 1rem;">
+    <b>Your Tasks</b>
+    <lucide-icon name="calendar-plus-2"  (click)="openModal()"></lucide-icon>
+</div>
+
+<modal-template [isModelOpen]="isModalOpen" (isModalClose)="isModalOpen = false">
+    <div style="margin-bottom: 0.5rem;">Add Task</div>
+    <form>
+        <div class="input">
+            <label>Title</label>
+            <input type="text" name="title" [(ngModel)]="title" />
+        </div>
+        <div class="input">
+            <label>Content</label>
+            <input type="text" name="content" [(ngModel)]="content" />
+        </div>
+        <div class="input">
+            <label>Deadline</label>
+            <input type="datetime-local" name="deadline" [(ngModel)]="deadline"/>
+        </div>
+        <input type="submit" value="confirm" (click)="handleCreate()">
+    </form>
+
+</modal-template>
+
+
+@for (task of tasksFromDB; track task.taskId) {
+    <item-component [task]="task"  (onDelete)="deleteTask($event)"  (onEdit)="editTask($event)" (onSubmit)="updateStatus($event)"/>
+}

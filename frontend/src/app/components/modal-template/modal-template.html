@@ -1,0 +1,12 @@
+@if (isModelOpen()) {
+<div class="modal-overlay" (click)="close()">
+  <div class="modal-box" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="close()">×</button>
+
+    <div class="modal-content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+}
+
